@@ -1,0 +1,60 @@
+
+
+	2/11 - primeiro checkpoint
+	16/11 - segundo checkpoint
+	30/11 - ultimo checkpoint
+
+
+			Grande Restaurante da Tia Magali
+
+ 
+Requistos básicos do projeto:
+
+     - Usuário = Gerente
+
+     - Restaurante
+
+         - Cardápio -> Lista
+
+             - Adicionar/remover item em qualquer posição (ordem não importa)
+
+         - Pedidos -> Fila
+
+             - Cadastrar pedido (adicionar na fila) qualquer item presente na lista do Cardápio
+
+             - Servir um prato (remover da lista, não pode estar vazia)
+
+         - Fluff:
+
+             - Estatísticas de quais pratos foram servidos
+
+             - Estatísticas de pratos mais/menos populares
+ 
+Implementação:
+
+     - Implementar Cardápio
+
+     - Implementar Pedidos
+
+     - Integrar com o KISS
+
+     - (Opcional) Fluff
+ 
+ 
+Etapa 1 (02/11):
+
+     - Implementar a parte de CLI (Cardápio e Pedidos)
+
+     - Estudar KISS externamente, ler e testar as 28 páginas do manual
+
+ Etapa 2 (16/11):
+
+     - Integração básica com o KISS
+
+     - Integração completa com o KISS ??
+
+ Etapa 3 (16/11):
+
+     - Integração básica com o KISS
+
+     - Integração completa com o KISS ??
