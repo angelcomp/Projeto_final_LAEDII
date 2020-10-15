@@ -1,3 +1,8 @@
+Alunos: 
+	- Angelica
+	- Lucas Godoi
+	- Marcus
+	- Rhian
 
 
 	2/11 - primeiro checkpoint
