@@ -26,7 +26,7 @@ void lista_criar(lista *q);
 int lista_inserir(lista *q, char novo_item[]);
 void lista_mostrar(lista q);
 int lista_estaVazia(lista q);
-int lista_retirar_por_nome(lista *q, char novo_item[]);
+int lista_retirar_por_nome(lista *q, char *ptr_novo_nome);
 int lista_retirar_por_posicao(lista *q, int indice);
 void lista_esvaziar(lista *q);
 

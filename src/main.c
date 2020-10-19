@@ -66,6 +66,7 @@ int main(void) {
 		printf("0. Sair\n");
 		printf("Digite: ");
 		scanf("%d", &opcao);
+		getchar();
 
 		switch(opcao) {
 			case 0:
@@ -95,7 +96,6 @@ int main(void) {
 		}
 		if(opcao) {
 			printf("Digite enter para continuar.");
-			getchar();
 			getchar();
 		}
 	} while(opcao);
