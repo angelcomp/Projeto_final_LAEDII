@@ -1,0 +1,2 @@
+Este arquivo será removido em breve.
+Utilizado para verificar se ao dar pull na branch rhian_changes o main é puxado.
