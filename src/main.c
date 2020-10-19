@@ -1,29 +1,104 @@
 /* Compilado com:
-gcc -Wall lista.c utils.c main.c -o restaurante; ./restaurante
+gcc -Wall lista.c fila.c utils.c opcoes_menu.c main.c -o restaurante; ./restaurante
 */
 
 #include <stdio.h>
+
 #include "header.h"
 
-int main(void) {
-	lista_sde lista;
+void funcao_teste() {
+	lista lista;
+	fila f;
+	char nome_retirada[30];
 
-	criar(&lista);
+	lista_criar(&lista);
 
-	inserir(&lista, "Teste");
-	inserir(&lista, "123");
-	inserir(&lista, "456");
-	inserir(&lista, "Bob esponja");
+	lista_inserir(&lista, nova_string("Teste"));
+	lista_inserir(&lista, nova_string("123"));
+	lista_inserir(&lista, nova_string("456"));
+	lista_inserir(&lista, nova_string("Bob esponja"));
 
-	// retirar(&lista, 10);
+	lista_retirar_por_posicao(&lista, 2);
 
-	if(!estaVazia(lista)) {
-		mostrar(lista);
+
+	if(!lista_estaVazia(lista)) {
+		lista_mostrar(lista);
 	}	 else {
 		printf("A lista está vazia.\n");
 	}
 
-	return 0;
+	lista_esvaziar(&lista);
+
+	printf("\n");
+
+	fila_criar(&f);
+
+	fila_inserir(&f, nova_string("Hello, world!"));
+	fila_inserir(&f, nova_string("Hello there!"));
+	fila_inserir(&f, nova_string("General Kenobi!"));
+
+	if(fila_retirar(&f, nome_retirada, 30))
+		printf("Dado retirado = %s\n", nome_retirada);
+	fila_mostrar(f);
+
+	fila_esvaziar(&f);
+}
+
+int main(void) {
+	lista cardapio;
+	fila pedidos;
+	int opcao;
+
+	lista_criar(&cardapio);
+	fila_criar(&pedidos);
+	
+	funcao_teste();
+
+	printf("Bem-vindo ao restaurante da tia Magali!\n");
+	do {
+		printf("Opções:\n");
+		printf("1. Mostrar cardápio\n");
+		printf("2. Mostrar pedidos pendentes\n");
+		printf("3. Adicionar item no cardápio\n");
+		printf("4. Remover item do cardápio\n");
+		printf("5. Cadastrar pedido\n");
+		printf("6. Servir pedido\n");
+		printf("0. Sair\n");
+		printf("Digite: ");
+		scanf("%d", &opcao);
+
+		switch(opcao) {
+			case 0:
+				printf("Tchauzinho e até mais!\n");
+				break;
+			case 1:
+				mostrarCardapio(cardapio);
+				break;
+			case 2:
+				mostrarPedidos(pedidos);
+				break;
+			case 3:
+				adicionarItemCardapio(&cardapio);
+				break;
+			case 4:
+				removerItemCardapio(&cardapio);
+				break;
+			case 5:
+				cadastrarPedido(&pedidos);
+				break;
+			case 6:
+				servirPedido(&pedidos);
+				break;
+			case 7:
+			default:
+				printf("Opção inválida.\n");
+		}
+		if(opcao) {
+			printf("Digite enter para continuar.");
+			getchar();
+			getchar();
+		}
+	} while(opcao);
 
 	return 0;
 }
