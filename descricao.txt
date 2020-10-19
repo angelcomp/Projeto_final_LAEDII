@@ -27,7 +27,7 @@ Requistos básicos do projeto:
 
              - Cadastrar pedido (adicionar na fila) qualquer item presente na lista do Cardápio
 
-             - Servir um prato (remover da lista, não pode estar vazia)
+             - Servir um prato (remover da fila, não pode estar vazia)
 
          - Fluff:
 
@@ -58,7 +58,7 @@ Etapa 1 (02/11):
 
      - Integração completa com o KISS ??
 
- Etapa 3 (16/11):
+ Etapa 3 (23/11):
 
      - Integração básica com o KISS
 
