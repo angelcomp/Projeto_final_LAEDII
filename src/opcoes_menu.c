@@ -6,7 +6,7 @@
 
 void mostrarCardapio(lista c){
 	struct no_lista *aux;
-	int i;
+	int i = 1;
     if (c.inicio == NULL)
         printf("Cardapio vazio. . .\n\n");
     else
@@ -15,7 +15,7 @@ void mostrarCardapio(lista c){
         aux = c.inicio;
         do
         {
-            printf("Item %d: %s ", i, aux->nome);
+            printf("Item %d: %s\n", i, aux->nome);
             aux = aux->prox;
             i++;
         } while (aux != NULL);//enquanto nao chegar no aux->prox == NULL, continuar o programa.
