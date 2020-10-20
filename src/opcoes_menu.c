@@ -15,7 +15,7 @@ void mostrarCardapio(lista c){
         aux = c.inicio;
         do
         {
-            printf("Item %d: %d ", i, aux->nome);
+            printf("Item %d: %s ", i, aux->nome);
             aux = aux->prox;
             i++;
         } while (aux != NULL);//enquanto nao chegar no aux->prox == NULL, continuar o programa.
