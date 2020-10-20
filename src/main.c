@@ -26,44 +26,6 @@
 
 #include "header.h"
 
-void funcao_teste() {
-	lista lista;
-	fila f;
-	char nome_retirada[30];
-
-	lista_criar(&lista);
-
-	lista_inserir(&lista, nova_string("Teste"));
-	lista_inserir(&lista, nova_string("123"));
-	lista_inserir(&lista, nova_string("456"));
-	lista_inserir(&lista, nova_string("Bob esponja"));
-
-	lista_retirar_por_posicao(&lista, 2);
-
-
-	if(!lista_estaVazia(lista)) {
-		lista_mostrar(lista);
-	}	 else {
-		printf("A lista está vazia.\n");
-	}
-
-	lista_esvaziar(&lista);
-
-	printf("\n");
-
-	fila_criar(&f);
-
-	fila_inserir(&f, nova_string("Hello, world!"));
-	fila_inserir(&f, nova_string("Hello there!"));
-	fila_inserir(&f, nova_string("General Kenobi!"));
-
-	if(fila_retirar(&f, nome_retirada, 30))
-		printf("Dado retirado = %s\n", nome_retirada);
-	fila_mostrar(f);
-
-	fila_esvaziar(&f);
-}
-
 int main(void) {
 	lista cardapio;
 	fila pedidos;
@@ -71,8 +33,6 @@ int main(void) {
 
 	lista_criar(&cardapio);
 	fila_criar(&pedidos);
-	
-	funcao_teste();
 
 	printf("Bem-vindo ao restaurante da tia Magali!\n");
 	do {
