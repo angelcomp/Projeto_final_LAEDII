@@ -1,5 +1,6 @@
 /* Compilado com:
-gcc -Wall lista.c fila.c utils.c opcoes_menu.c main.c -o restaurante; ./restaurante
+ > gcc -Wall lista.c fila.c utils.c opcoes_menu.c main.c -o restaurante
+ > ./restaurante
 */
 
 #include <stdio.h>
