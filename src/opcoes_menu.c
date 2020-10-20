@@ -9,6 +9,7 @@ void mostrarCardapio(lista c){
 }
 void mostrarPedidos(fila p){
     struct no_fila *aux;
+    int contagem = 0;
     aux = p.inicio;
 
     if (aux == NULL) {
@@ -16,7 +17,7 @@ void mostrarPedidos(fila p){
     } else {
         while (aux != NULL)
         {
-            printf("\n%s", aux->nome);
+            printf("\n > Pedido %d: %s", contagem, aux->nome);
             aux = aux->prox;
         }
     }
