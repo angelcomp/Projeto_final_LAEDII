@@ -1,5 +1,25 @@
-/* Compilado com:
-gcc -Wall lista.c fila.c utils.c opcoes_menu.c main.c -o restaurante; ./restaurante
+/*
+
+*                        Ciencia da Computacao - PUC Pocos de Caldas
+
+* Laboratório de Algoritmos e Estruturas de Dados II
+* Professor: Claudio Correa
+* 2º periodo
+
+* Alunos: Angelica dos Santos
+* 		  Lucas de Godoi Moraes
+*		  Marcus Vinicius Ribeiro
+*		  Rhian Luis Garcia Moraes
+
+* Trabalho Final LAED II - Implementação de Estruturas de Dados Dinâmicas e Interface Gráfica
+* Data entrega projeto: 01/12/2020
+
+*       |~~~~~~~~~~~~~~~~~~~~~~~~~~~ E RECOMENDADO COMPILAR NO TERMINAL ~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+
+*       |  >>>>>>>> gcc -Wall lista.c fila.c utils.c opcoes_menu.c main.c -o restaurante <<<<<<<<  |
+
+*       |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+
 */
 
 #include <stdio.h>
