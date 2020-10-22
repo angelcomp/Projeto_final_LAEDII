@@ -36,7 +36,46 @@ void mostrarPedidos(fila p){
         }
     }
 }
-void adicionarItemCardapio(lista *c){
+int adicionarItemCardapio(lista *c){
+    char *var;
+    int tam = 30;
+
+    struct no_lista *aux;
+
+    var = (char *) malloc(sizeof(char) * tam);
+    aux = (struct no_lista *) malloc(sizeof(struct no_lista *));
+
+    if(var == NULL)
+    {
+        return 0;
+    }
+    if(aux == NULL)
+    {
+        return 0;
+    }
+
+    printf("\nDigite o item a ser adicionado ao cardapio: ");
+    fgets(var,tam,stdin);
+
+    aux->nome = var;
+
+    if(c->inicio == NULL)
+    {
+        c->inicio = aux;
+        c->fim = aux;
+        aux->prox = NULL;
+        aux->ant = NULL;
+    }
+    else
+    {
+        aux->ant = c->fim;
+		c->fim->prox = aux;
+		aux->prox = c->inicio;
+		c->inicio->ant = aux;
+		c->fim = aux;
+		aux->prox=NULL;
+    }
+    return 1;
 
 }
 void removerItemCardapio(lista *c){

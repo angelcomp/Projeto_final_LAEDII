@@ -43,7 +43,7 @@ void fila_esvaziar(fila *q);
 // Funções do menu
 void mostrarCardapio(lista c);
 void mostrarPedidos(fila p);
-void adicionarItemCardapio(lista *c);
+int adicionarItemCardapio(lista *c);
 void removerItemCardapio(lista *c);
 void cadastrarPedido(fila *p);
 void servirPedido(fila *p);
