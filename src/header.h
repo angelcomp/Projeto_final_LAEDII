@@ -45,7 +45,7 @@ void mostrarCardapio(lista c);
 void mostrarPedidos(fila p);
 void adicionarItemCardapio(lista *c);
 void removerItemCardapio(lista *c);
-void cadastrarPedido(fila *p);
+void cadastrarPedido(fila *p, lista c);
 void servirPedido(fila *p);
 
 // Funções utilitárias

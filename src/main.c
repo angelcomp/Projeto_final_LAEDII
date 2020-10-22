@@ -70,7 +70,7 @@ int main(void) {
 				removerItemCardapio(&cardapio);
 				break;
 			case 5:
-				cadastrarPedido(&pedidos);
+				cadastrarPedido(&pedidos, cardapio);
 				break;
 			case 6:
 				servirPedido(&pedidos);
