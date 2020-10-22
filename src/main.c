@@ -34,9 +34,10 @@ int main(void) {
 	lista_criar(&cardapio);
 	fila_criar(&pedidos);
 
-	lista_inserir(&cardapio, nova_string("Novo1"));
-	lista_inserir(&cardapio, nova_string("Novo2"));
-	lista_inserir(&cardapio, nova_string("Novo3"));
+	// Apenas para teste. Deverão sre deletados depois
+	lista_inserir(&cardapio, nova_string("Arroz"));
+	lista_inserir(&cardapio, nova_string("Macarrão"));
+	lista_inserir(&cardapio, nova_string("Quiabo"));
 
 	printf("Bem-vindo ao restaurante da tia Magali!\n");
 	do {
