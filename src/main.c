@@ -14,7 +14,7 @@
 * Trabalho Final LAED II - Implementação de Estruturas de Dados Dinâmicas e Interface Gráfica
 * Data entrega projeto: 01/12/2020
 
-*       |~~~~~~~~~~~~~~~~~~~~~~~~~~~ E RECOMENDADO COMPILAR NO TERMINAL ~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+*       |~~~~~~~~~~~~~~~~~~~~~~~~~~~ É RECOMENDADO COMPILAR NO TERMINAL ~~~~~~~~~~~~~~~~~~~~~~~~~~~|
 
 *       |  >>>>>>>> gcc -Wall lista.c fila.c utils.c opcoes_menu.c main.c -o restaurante <<<<<<<<  |
 
@@ -79,6 +79,9 @@ int main(void) {
 			getchar();
 		}
 	} while(opcao);
+
+	fila_esvaziar(&pedidos);
+	lista_esvaziar(&cardapio);
 
 	return 0;
 }

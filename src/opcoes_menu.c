@@ -40,7 +40,63 @@ void adicionarItemCardapio(lista *c){
 
 }
 void removerItemCardapio(lista *c){
+    struct no_lista *aux;
+    int indice = 1, tam = 30, escolha, item;
+    char nome_prato[tam];
+    
+    aux = c->inicio;
+    
+    if (aux == NULL)
+    {
+        printf("\n Cardápio está vazio!\n");
+    } else {
+        do {
+            printf("\nHá duas maneiras para se retirar um item da lista:\n\t 1 - Por índice\n\t 2 - Por nome\n\n Qual você prefere?");
+            scanf("%d", &escolha);
+            getchar();
+        
+            switch (escolha) {
+                case 1:
+                    while (aux != NULL) {
+                        printf("Item %d: %s\n", indice, aux->nome);
+                        aux = aux->prox;
+                        indice++;
+                    }
+                    printf("\nQual desses itens você deseja remover da lista do Cardápio?");
+                    scanf("%d", &item);
+                    getchar();
 
+                    if (lista_retirar_por_posicao(c, item))
+                    {
+                        printf("\n Opção retirada do cardápio com sucesso!");
+                    } else {
+                        printf("\n * Não foi possível fazer a retirada desse item.. *");
+                    }
+                    break;
+
+                case 2:
+                    if (nome_prato == NULL)
+                    {
+                        printf("\n * Erro ao tentar alocar uma nova string.. *");
+                    } else {
+                        printf("\nEscreva o nome do prato que está no cardápio para que possamos removê-lo: ");
+                        fgets(nome_prato, tam, stdin);
+
+                        if (lista_retirar_por_nome(c, nome_prato))
+                        {
+                            printf("\n Opção retirada do cardápio com sucesso!");
+                        } else {
+                            printf("\n * Não foi possível fazer a retirada desse item.. *");
+                        }
+                    }
+                    break;
+
+                default:
+                    printf("\n * você escolheu uma opção inválida! *");
+                    break;
+            }
+        } while (!(escolha == 1 || escolha == 2));
+    }
 }
 void cadastrarPedido(fila *p){
 
