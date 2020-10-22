@@ -34,6 +34,10 @@ int main(void) {
 	lista_criar(&cardapio);
 	fila_criar(&pedidos);
 
+	lista_inserir(&cardapio, nova_string("Novo1"));
+	lista_inserir(&cardapio, nova_string("Novo2"));
+	lista_inserir(&cardapio, nova_string("Novo3"));
+
 	printf("Bem-vindo ao restaurante da tia Magali!\n");
 	do {
 		printf("Opções:\n");
@@ -75,7 +79,7 @@ int main(void) {
 				printf("Opção inválida.\n");
 		}
 		if(opcao) {
-			printf("Digite enter para continuar.");
+			printf("\nDigite enter para continuar.");
 			getchar();
 		}
 	} while(opcao);

@@ -66,9 +66,7 @@ void removerItemCardapio(lista *c){
                     scanf("%d", &item);
                     getchar();
 
-                    item -1; //voltando em 1 posição na lista, pois o que o usuário vê como n, na lista está como n-1
-
-                    if (lista_retirar_por_posicao(c, item))
+                    if (lista_retirar_por_posicao(c, item-1))
                     {
                         printf("\n Opção retirada do cardápio com sucesso!");
                     } else {
@@ -83,6 +81,8 @@ void removerItemCardapio(lista *c){
                     } else {
                         printf("\nEscreva o nome do prato que está no cardápio para que possamos removê-lo: ");
                         fgets(nome_prato, tam, stdin);
+						nome_prato[strlen(nome_prato)-1] = '\0'; // Removendo o \n do final
+						printf("'%s'\n", nome_prato);
 
                         if (lista_retirar_por_nome(c, nome_prato))
                         {
