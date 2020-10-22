@@ -58,13 +58,15 @@ void removerItemCardapio(lista *c){
             switch (escolha) {
                 case 1:
                     while (aux != NULL) {
-                        printf("Item %d: %s\n", indice, aux->nome);
+                        printf("\nItem %d: %s", indice, aux->nome);
                         aux = aux->prox;
                         indice++;
                     }
                     printf("\nQual desses itens você deseja remover da lista do Cardápio?");
                     scanf("%d", &item);
                     getchar();
+
+                    item -1; //voltando em 1 posição na lista, pois o que o usuário vê como n, na lista está como n-1
 
                     if (lista_retirar_por_posicao(c, item))
                     {
