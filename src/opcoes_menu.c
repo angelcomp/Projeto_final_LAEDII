@@ -37,7 +37,22 @@ void mostrarPedidos(fila p){
     }
 }
 void adicionarItemCardapio(lista *c){
+    char *novo_item;
+    int tam = 30;
 
+    novo_item = (char *) malloc(sizeof(char) * tam);
+
+    printf("\nDigite o item a ser adicionado no cardápio: ");
+    fgets(novo_item,tam,stdin);
+
+    if(lista_inserir(c, novo_item))
+    {
+        printf("\nItem adicionado com sucesso!!\n");
+    }
+    else
+    {
+        printf("\nNão foi possível adicionar o item à lista\n");
+    }
 }
 void removerItemCardapio(lista *c){
 
