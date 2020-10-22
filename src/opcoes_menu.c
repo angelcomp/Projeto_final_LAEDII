@@ -115,7 +115,7 @@ void removerItemCardapio(lista *c){
         } while (!(escolha == 1 || escolha == 2));
     }
 }
-void cadastrarPedido(fila *p){
+void cadastrarPedido(fila *p, lista c){
 
 }
 void servirPedido(fila *p){
