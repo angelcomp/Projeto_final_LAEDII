@@ -36,47 +36,23 @@ void mostrarPedidos(fila p){
         }
     }
 }
-int adicionarItemCardapio(lista *c){
-    char *var;
+void adicionarItemCardapio(lista *c){
+    char *novo_item;
     int tam = 30;
 
-    struct no_lista *aux;
+    novo_item = (char *) malloc(sizeof(char) * tam);
 
-    var = (char *) malloc(sizeof(char) * tam);
-    aux = (struct no_lista *) malloc(sizeof(struct no_lista *));
+    printf("\nDigite o item a ser adicionado no cardápio: ");
+    fgets(novo_item,tam,stdin);
 
-    if(var == NULL)
+    if(lista_inserir(c, novo_item))
     {
-        return 0;
-    }
-    if(aux == NULL)
-    {
-        return 0;
-    }
-
-    printf("\nDigite o item a ser adicionado ao cardapio: ");
-    fgets(var,tam,stdin);
-
-    aux->nome = var;
-
-    if(c->inicio == NULL)
-    {
-        c->inicio = aux;
-        c->fim = aux;
-        aux->prox = NULL;
-        aux->ant = NULL;
+        printf("\nItem adicionado com sucesso!!\n");
     }
     else
     {
-        aux->ant = c->fim;
-		c->fim->prox = aux;
-		aux->prox = c->inicio;
-		c->inicio->ant = aux;
-		c->fim = aux;
-		aux->prox=NULL;
+        printf("\nNão foi possível adicionar o item à lista\n");
     }
-    return 1;
-
 }
 void removerItemCardapio(lista *c){
 
