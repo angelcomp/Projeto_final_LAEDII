@@ -39,6 +39,10 @@ int main(void) {
 	lista_inserir(&cardapio, nova_string("Macarrão"));
 	lista_inserir(&cardapio, nova_string("Quiabo"));
 
+	fila_inserir(&pedidos, nova_string("Quiabo"));
+	fila_inserir(&pedidos, nova_string("Limao"));
+	fila_inserir(&pedidos, nova_string("Arroz doce"));
+
 	printf("Bem-vindo ao restaurante da tia Magali!\n");
 	do {
 		printf("Opções:\n");

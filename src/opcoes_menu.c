@@ -119,5 +119,23 @@ void cadastrarPedido(fila *p, lista c){
 
 }
 void servirPedido(fila *p){
+    int  tam = 30;
+    char *nome_pedido;
 
+    nome_pedido = (char *) malloc(sizeof(char) * tam);
+    
+    if (p->inicio == NULL)
+    {
+        printf("Não há nenhum pedido a ser retirado!\n");
+    }
+    else{
+        nome_pedido = p->inicio->nome;
+
+        printf("\nNome do pedido sendo retirado: %s\n", nome_pedido);
+
+        if(fila_retirar(p,nome_pedido,tam))
+        {
+            printf("Pedido retirado com sucesso!\n");
+        }
+    }
 }
