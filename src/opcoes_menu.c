@@ -97,8 +97,8 @@ void removerItemCardapio(lista *c){
                     } else {
                         printf("Escreva o nome do prato que está no cardápio para que possamos removê-lo: ");
                         fgets(nome_prato, tam, stdin);
-						nome_prato[strlen(nome_prato)-1] = '\0'; // Removendo o \n do final
-
+						            nome_prato[strlen(nome_prato)-1] = '\0'; // Removendo o \n do final
+                      
                         if (lista_retirar_por_nome(c, nome_prato))
                         {
                             printf(" Opção retirada do cardápio com sucesso!\n");
@@ -116,8 +116,7 @@ void removerItemCardapio(lista *c){
     }
 }
 
-void cadastrarPedido(fila *p, lista c)
-{
+void cadastrarPedido(fila *p, lista c) {
     char *nome_pedido;
     int item, i;
     struct no_lista *aux;
