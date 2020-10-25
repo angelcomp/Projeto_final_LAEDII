@@ -14,7 +14,7 @@
 * Trabalho Final LAED II - Implementação de Estruturas de Dados Dinâmicas e Interface Gráfica
 * Data entrega projeto: 01/12/2020
 
-*       |~~~~~~~~~~~~~~~~~~~~~~~~~~~ E RECOMENDADO COMPILAR NO TERMINAL ~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+*       |~~~~~~~~~~~~~~~~~~~~~~~~~~~ É RECOMENDADO COMPILAR NO TERMINAL ~~~~~~~~~~~~~~~~~~~~~~~~~~~|
 
 *       |  >>>>>>>> gcc -Wall lista.c fila.c utils.c opcoes_menu.c main.c -o restaurante <<<<<<<<  |
 
@@ -34,11 +34,14 @@ int main(void) {
 	lista_criar(&cardapio);
 	fila_criar(&pedidos);
 
+	// Apenas para teste. Deverão sre deletados depois
+	lista_inserir(&cardapio, nova_string("Arroz"));
+	lista_inserir(&cardapio, nova_string("Macarrão"));
+	lista_inserir(&cardapio, nova_string("Quiabo"));
 
-	/*lista_inserir(&cardapio, nova_string("Banana"));
-	lista_inserir(&cardapio, nova_string("Uva"));
-	lista_inserir(&cardapio, nova_string("Goiaba"));*/
-	//Este trecho serve para testar na hora de enviar um pedido para a fila, mostrar cardapio, etc...
+	fila_inserir(&pedidos, nova_string("Quiabo"));
+	fila_inserir(&pedidos, nova_string("Limao"));
+	fila_inserir(&pedidos, nova_string("Arroz doce"));
 
 	printf("Bem-vindo ao restaurante da tia Magali!\n");
 	do {
@@ -81,11 +84,13 @@ int main(void) {
 				printf("Opção inválida.\n");
 		}
 		if(opcao) {
-			printf("Digite enter para continuar.");
+			printf("\nDigite enter para continuar.");
 			getchar();
 		}
 	} while(opcao);
 
+	fila_esvaziar(&pedidos);
+	lista_esvaziar(&cardapio);
+
 	return 0;
 }
-
