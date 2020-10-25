@@ -29,7 +29,7 @@ int fila_inserir(fila *q, char *ptr_nome) {
 		q->fim->prox = aux; // Efetuando a ligação
 		q->fim = aux; // Atualizando o ponteiro de fim da fila
 	}
-	
+
 	return 1;
 }
 
@@ -126,3 +126,4 @@ void fila_esvaziar(fila *q) {
 		fila_retirar(q, NULL, 0);
 	}
 }
+

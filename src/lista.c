@@ -153,7 +153,7 @@ int lista_retirar_por_posicao(lista *q, int indice) {
 		// ou o índice é automaticamente inválido
 		return 0;
 	}
-	
+
 	// Obtendo o nó a ser removido e retirando
 	for(i = 0; i < indice; i++) {
 		aux = aux->prox;
@@ -179,7 +179,7 @@ int lista_retirar_por_posicao(lista *q, int indice) {
 	} else if(aux == q->fim) {
 		q->fim = aux->ant;
 		q->fim->prox = NULL;
-	
+
 	// Remover do meio da lista
 	} else {
 		// Ligando os nó anterior e posterior a este

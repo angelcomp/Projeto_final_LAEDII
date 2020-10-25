@@ -34,6 +34,12 @@ int main(void) {
 	lista_criar(&cardapio);
 	fila_criar(&pedidos);
 
+
+	/*lista_inserir(&cardapio, nova_string("Banana"));
+	lista_inserir(&cardapio, nova_string("Uva"));
+	lista_inserir(&cardapio, nova_string("Goiaba"));*/
+	//Este trecho serve para testar na hora de enviar um pedido para a fila, mostrar cardapio, etc...
+
 	printf("Bem-vindo ao restaurante da tia Magali!\n");
 	do {
 		printf("Opções:\n");
@@ -65,7 +71,7 @@ int main(void) {
 				removerItemCardapio(&cardapio);
 				break;
 			case 5:
-				cadastrarPedido(&pedidos);
+				cadastrarPedido(&pedidos, cardapio);
 				break;
 			case 6:
 				servirPedido(&pedidos);
@@ -82,3 +88,4 @@ int main(void) {
 
 	return 0;
 }
+

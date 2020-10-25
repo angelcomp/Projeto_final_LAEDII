@@ -1,6 +1,6 @@
 
 // Estruturas
-struct no_lista { // Ocupa 10 bytes na simulaÃ§Ã£o do JoÃ£o
+struct no_lista { // Ocupa 10 bytes na simulação do João
 	struct no_lista * ant;
 	char * nome;
 	struct no_lista * prox;
@@ -21,7 +21,7 @@ typedef struct {
 	struct no_fila *fim;
 } fila;
 
-// FunÃ§Ãµes para a manipulaÃ§Ã£o de listas
+// Funções para a manipulação de listas
 void lista_criar(lista *q);
 int lista_inserir(lista *q, char novo_item[]);
 void lista_mostrar(lista q);
@@ -30,7 +30,7 @@ int lista_retirar_por_nome(lista *q, char *ptr_novo_nome);
 int lista_retirar_por_posicao(lista *q, int indice);
 void lista_esvaziar(lista *q);
 
-// FunÃ§Ãµes para a manipulaÃ§Ã£o de filas
+// Funções para a manipulação de filas
 void fila_criar(fila *q);
 int fila_inserir(fila *q, char *ptr_nome);
 int fila_retirar(fila *q, char receptor_nome[], int tamanho_buffer_receptor);
@@ -40,13 +40,13 @@ char * fila_inicio(fila q);
 int fila_procurar(fila q, char busca[]);
 void fila_esvaziar(fila *q);
 
-// FunÃ§Ãµes do menu
+// Funções do menu
 void mostrarCardapio(lista c);
 void mostrarPedidos(fila p);
 void adicionarItemCardapio(lista *c);
 void removerItemCardapio(lista *c);
-void cadastrarPedido(fila *p);
+void cadastrarPedido(fila *p, lista c);
 void servirPedido(fila *p);
 
-// FunÃ§Ãµes utilitÃ¡rias
+// Funções utilitárias
 char * nova_string(char texto[]);
