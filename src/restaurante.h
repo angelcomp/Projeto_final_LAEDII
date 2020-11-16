@@ -21,6 +21,14 @@ typedef struct {
 	struct no_fila *fim;
 } fila;
 
+// Enumerador que representa o identificador de cada tela
+enum telas {
+	TELA_SAIR,
+	TELA_PRINCIPAL,
+	TELA_CARDAPIO,
+	TELA_PEDIDOS
+};
+
 // Funções para a manipulação de listas
 void lista_criar(lista *q);
 int lista_inserir(lista *q, char novo_item[]);
@@ -48,5 +56,22 @@ void removerItemCardapio(lista *c);
 void cadastrarPedido(fila *p, lista c);
 void servirPedido(fila *p);
 
+// Funções da tela
+void tela_principal();
+void tela_cardapio();
+void tela_ver_cardapio();
+void tela_adicionar_no_cardapio();
+void tela_remover_do_cardapio();
+void tela_pedidos();
+void tela_ver_pedidos();
+void tela_adicionar_nos_pedidos();
+void tela_remover_dos_pedidos();
+
 // Funções utilitárias
 char * nova_string(char texto[]);
+void chamar_prox_tela();
+
+// Variáveis globais para o projeto todo, chamadas com 'extern'
+int prox_tela;
+lista cardapio;
+fila pedidos;

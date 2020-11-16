@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "header.h"
+#include "restaurante.h"
 
 void fila_criar(fila *q) {
 	q->inicio = NULL;

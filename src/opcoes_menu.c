@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "header.h"
+#include "restaurante.h"
 
 void mostrarCardapio(lista c){
 	struct no_lista *aux;

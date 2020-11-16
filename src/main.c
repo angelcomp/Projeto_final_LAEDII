@@ -18,18 +18,47 @@
 #include <stdio.h>
 
 #include "kiss_sdl/kiss_sdl.h"
-#include "header.h"
+#include "restaurante.h"
 
-void button_cardapio_event(kiss_button *button, SDL_Event *e, int *draw);
-void button_pedidos_event(kiss_button *button, SDL_Event *e, int *draw);
+extern int prox_tela;
+extern fila pedidos;
+extern lista cardapio;
+
+void button_cardapio_event(kiss_button *button, SDL_Event *e, int *quit, int *draw);
+void button_pedidos_event(kiss_button *button, SDL_Event *e, int *quit, int *draw);
+void chamar_prox_tela();
 
 int main(void) {
-	lista cardapio;
-	fila pedidos;
-
 	lista_criar(&cardapio);
 	fila_criar(&pedidos);
+	prox_tela = TELA_PRINCIPAL;
 
+	chamar_prox_tela();
+
+	return 0;
+}
+
+void chamar_prox_tela() {
+	switch(prox_tela) {
+		case TELA_PRINCIPAL:
+			tela_principal();
+			break;
+		case TELA_CARDAPIO:
+			tela_cardapio();
+			break;
+		case TELA_PEDIDOS:
+			tela_pedidos();
+			break;
+		case TELA_SAIR:
+			fila_esvaziar(&pedidos);
+			lista_esvaziar(&cardapio);
+			break;
+		default:
+			break;
+	}
+}
+
+void tela_principal(void) {
 	/* Declaração de variáveis */
 	SDL_Renderer *renderer;
 	SDL_Event e;
@@ -51,7 +80,7 @@ int main(void) {
 	renderer = kiss_init("Restaurate da Tia Magali", &objects, 480, 360);
 
 	if(!renderer) {
-		return 1;
+		return;
 	}
 
 	/* Inicializando a janela */
@@ -83,13 +112,14 @@ int main(void) {
 		SDL_Delay(10);
 		/* Passando pela lista de eventos */
 		while(SDL_PollEvent(&e)) {
-			if(e.type == SDL_QUIT) {
+			if(e.type == SDL_QUIT) { // Usuário clicou no X da janela
 				quit = 1;
+				prox_tela = TELA_SAIR;
 			}
 			/* Processando eventos da janela e do botão */
 			kiss_window_event(&window, &e, &draw);
-			button_cardapio_event(&button_cardapio, &e, &draw);
-			button_pedidos_event(&button_pedidos, &e, &draw);
+			button_cardapio_event(&button_cardapio, &e, &quit, &draw);
+			button_pedidos_event(&button_pedidos, &e, &quit, &draw);
 		}
 
 		if(!draw)
@@ -110,20 +140,19 @@ int main(void) {
 	}
 
 	kiss_clean(&objects);
-
-	fila_esvaziar(&pedidos);
-	lista_esvaziar(&cardapio);
-
-	return 0;
+	
+	chamar_prox_tela();
 }
 
-void button_cardapio_event(kiss_button *button, SDL_Event *e, int *draw) {
+void button_cardapio_event(kiss_button *button, SDL_Event *e, int *quit, int *draw) {
 	if(kiss_button_event(button, e, draw)) {
-		printf("Botão do cardápio clicado!\n");
+		prox_tela = TELA_CARDAPIO;
+		*quit = 1;
 	}
 }
-void button_pedidos_event(kiss_button *button, SDL_Event *e, int *draw) {
+void button_pedidos_event(kiss_button *button, SDL_Event *e, int *quit, int *draw) {
 	if(kiss_button_event(button, e, draw)) {
-		printf("Botão dos pedidos clicado!\n");
+		prox_tela = TELA_PEDIDOS;
+		*quit = 1;
 	}
 }
