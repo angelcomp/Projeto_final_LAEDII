@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "header.h"
+#include "restaurante.h"
 
 char * nova_string(char texto[]) {
 	// Alocando uma nova string do tamanho exato do parâmetro texto
