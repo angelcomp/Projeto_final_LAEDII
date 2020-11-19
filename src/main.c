@@ -31,7 +31,7 @@ void chamar_prox_tela();
 int main(void) {
 	lista_criar(&cardapio);
 	fila_criar(&pedidos);
-	prox_tela = TELA_PRINCIPAL;
+	prox_tela = TELA_ADICIONAR_NO_CARDAPIO;
 
 	chamar_prox_tela();
 
@@ -48,6 +48,24 @@ void chamar_prox_tela() {
 			break;
 		case TELA_PEDIDOS:
 			tela_pedidos();
+			break;
+		case TELA_VER_CARDAPIO:
+			// tela_ver_cardapio();
+			break;
+		case TELA_ADICIONAR_NO_CARDAPIO:
+			tela_adicionar_no_cardapio();
+			break;
+		case TELA_REMOVER_DO_CARDAPIO:
+			// tela_remover_do_cardapio();
+			break;
+		case TELA_VER_PEDIDOS:
+			// tela_ver_pedidos();
+			break;
+		case TELA_ADICIONAR_NOS_PEDIDOS:
+			// tela_adicionar_nos_pedidos();
+			break;
+		case TELA_REMOVER_DOS_PEDIDOS:
+			// tela_remover_dos_pedidos();
 			break;
 		case TELA_SAIR:
 			fila_esvaziar(&pedidos);
