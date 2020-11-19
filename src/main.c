@@ -49,6 +49,9 @@ void chamar_prox_tela() {
 		case TELA_PEDIDOS:
 			tela_pedidos();
 			break;
+		case TELA_VER_CARDAPIO:
+			tela_ver_cardapio();
+			break;
 		case TELA_SAIR:
 			fila_esvaziar(&pedidos);
 			lista_esvaziar(&cardapio);
