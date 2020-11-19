@@ -50,7 +50,7 @@ void chamar_prox_tela() {
 			tela_pedidos();
 			break;
 		case TELA_VER_CARDAPIO:
-			// tela_ver_cardapio();
+			tela_ver_cardapio();
 			break;
 		case TELA_ADICIONAR_NO_CARDAPIO:
 			tela_adicionar_no_cardapio();
