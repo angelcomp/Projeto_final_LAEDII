@@ -31,7 +31,7 @@ void chamar_prox_tela();
 int main(void) {
 	lista_criar(&cardapio);
 	fila_criar(&pedidos);
-	prox_tela = TELA_ADICIONAR_NO_CARDAPIO;
+	prox_tela = TELA_PRINCIPAL;
 
 	chamar_prox_tela();
 
