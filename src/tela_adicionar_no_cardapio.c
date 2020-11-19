@@ -27,13 +27,12 @@ void tela_adicionar_no_cardapio(void) {
 	kiss_entry entry_novo_item = {0};
 	kiss_button t08_button_confirmar = {0};
 	kiss_button t08_button_voltar = {0};
-	
-	// kiss_array array_novo_item;
 
 	char txt_header[KISS_MAX_LENGTH];
+	int entrada_novo_item_width;
+	
 	int draw, quit;
 
-	int entrada_novo_item_width;
 
 	quit = 0;
 	draw = 1;
@@ -57,6 +56,7 @@ void tela_adicionar_no_cardapio(void) {
 	);
 	label_header.textcolor.r = 255;
 	
+	/* Criando a label que mostra quantas entradas o usuário adicionou */
 	kiss_label_new(&label_contador, &window, "",
 		0,
 		3*window.rect.h / 8 - (kiss_textfont.fontheight + 2 * kiss_normal.h / 2)
@@ -64,14 +64,11 @@ void tela_adicionar_no_cardapio(void) {
 	label_contador.textcolor.b = 128;
 
 	/* Criando o widget de entrada */
-	// kiss_array_new(&array_novo_item);
 	entrada_novo_item_width = window.rect.w/3;
 	kiss_entry_new(&entry_novo_item, &window, 1, "",
 		1*window.rect.w / 2 - entrada_novo_item_width / 2,
 		1*window.rect.h / 2,
-		// 50, 50,
 		entrada_novo_item_width
-		// 200
 	);
 	entry_novo_item.visible = 1;
 
@@ -129,26 +126,31 @@ void tela_adicionar_no_cardapio(void) {
 	chamar_prox_tela();
 }
 
+// Função que efetiva a inserção
 void t08_button_confirmar_event(kiss_button *button, SDL_Event *e, kiss_entry *entry, kiss_label *label_contador, int *quit, int *draw) {
 	char *novo_item;
 
 	if(kiss_button_event(button, e, draw) && (strcmp(entry->text, ""))) {
-		novo_item = nova_string(entry->text);
+		novo_item = nova_string(entry->text); // Alocando uma nova string com base no que o usuário escreveu
 
-		lista_inserir(&cardapio, novo_item);
+		lista_inserir(&cardapio, novo_item); // Inserindo na lista
 
+		// Definindo o comportamento após a inserção
 		if(VOLTAR_AO_ADICIONAR_ITEM) {
 			prox_tela = TELA_CARDAPIO;
 			*quit = 1;
 		} else {
-			strcpy(entry->text, "");
+			strcpy(entry->text, ""); // Apagando o texto da entrada
 		}
 
 		itens_adicionados++;
 		atualizar_label_itens_adicionados(label_contador);
-		// mostrarCardapio(cardapio);
+
+		mostrarCardapio(cardapio); // DEBUG
 	}
 }
+
+// Evento do botão que volta para a tela do cardápio
 void t08_button_voltar_event(kiss_button *button, SDL_Event *e, int *quit, int *draw) {
 	if(kiss_button_event(button, e, draw)) {
 		prox_tela = TELA_CARDAPIO;
@@ -156,10 +158,13 @@ void t08_button_voltar_event(kiss_button *button, SDL_Event *e, int *quit, int *
 	}
 }
 void atualizar_label_itens_adicionados(kiss_label *label_contador) {
+	// Atualizando o texto da label
 	if(itens_adicionados == 1) {
 		strcpy(label_contador->text, "1 item foi adicionado até agora!");
 	} else {
 		sprintf(label_contador->text, "%d itens foram adicionados até agora!", itens_adicionados);
 	}
+
+	// Atualizando sua posição horiziontal para refletir o tamanho da nova string
 	label_contador->rect.x = (label_contador->wdw->rect.w) / 2 - strlen(label_contador->text) * kiss_textfont.advance / 2;
 }
