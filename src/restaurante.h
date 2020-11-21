@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "kiss_sdl/kiss_sdl.h"
 
 // Estruturas
 struct no_lista { // Ocupa 10 bytes na simulação do João
@@ -78,6 +82,7 @@ void tela_remover_dos_pedidos();
 
 // Funções utilitárias
 char * nova_string(char texto[]);
+int obter_indice_combobox(kiss_combobox *combobox);
 void chamar_prox_tela();
 
 // Variáveis globais para o projeto todo, chamadas com 'extern'
