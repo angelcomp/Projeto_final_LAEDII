@@ -15,9 +15,6 @@
 * Data entrega projeto: 01/12/2020
 */
 
-#include <stdio.h>
-
-#include "kiss_sdl/kiss_sdl.h"
 #include "restaurante.h"
 
 extern int prox_tela;
@@ -31,49 +28,11 @@ void chamar_prox_tela();
 int main(void) {
 	lista_criar(&cardapio);
 	fila_criar(&pedidos);
-	prox_tela = TELA_PRINCIPAL;
+	prox_tela = TELA_REMOVER_DO_CARDAPIO;
 
 	chamar_prox_tela();
 
 	return 0;
-}
-
-void chamar_prox_tela() {
-	switch(prox_tela) {
-		case TELA_PRINCIPAL:
-			tela_principal();
-			break;
-		case TELA_CARDAPIO:
-			tela_cardapio();
-			break;
-		case TELA_PEDIDOS:
-			tela_pedidos();
-			break;
-		case TELA_VER_CARDAPIO:
-			tela_ver_cardapio();
-			break;
-		case TELA_ADICIONAR_NO_CARDAPIO:
-			tela_adicionar_no_cardapio();
-			break;
-		case TELA_REMOVER_DO_CARDAPIO:
-			// tela_remover_do_cardapio();
-			break;
-		case TELA_VER_PEDIDOS:
-			// tela_ver_pedidos();
-			break;
-		case TELA_ADICIONAR_NOS_PEDIDOS:
-			// tela_adicionar_nos_pedidos();
-			break;
-		case TELA_REMOVER_DOS_PEDIDOS:
-			// tela_remover_dos_pedidos();
-			break;
-		case TELA_SAIR:
-			fila_esvaziar(&pedidos);
-			lista_esvaziar(&cardapio);
-			break;
-		default:
-			break;
-	}
 }
 
 void tela_principal(void) {

@@ -1,6 +1,3 @@
-#include <stdio.h>
-
-#include "kiss_sdl/kiss_sdl.h"
 #include "restaurante.h"
 
 #define VOLTAR_AO_ADICIONAR_ITEM 0
@@ -11,8 +8,8 @@ extern lista cardapio;
 
 int itens_adicionados = 0;
 
-void t08_button_confirmar_event(kiss_button *button, SDL_Event *e, kiss_entry *entry, kiss_label *label_contador, int *quit, int *draw);
-void t08_button_voltar_event(kiss_button *button, SDL_Event *e, int *quit, int *draw);
+void t07_button_confirmar_event(kiss_button *button, SDL_Event *e, kiss_entry *entry, kiss_label *label_contador, int *quit, int *draw);
+void t07_button_voltar_event(kiss_button *button, SDL_Event *e, int *quit, int *draw);
 void atualizar_label_itens_adicionados(kiss_label *label_contador);
 
 void tela_adicionar_no_cardapio(void) {
@@ -25,8 +22,8 @@ void tela_adicionar_no_cardapio(void) {
 	kiss_label label_header = {0};
 	kiss_label label_contador = {0};
 	kiss_entry entry_novo_item = {0};
-	kiss_button t08_button_confirmar = {0};
-	kiss_button t08_button_voltar = {0};
+	kiss_button t07_button_confirmar = {0};
+	kiss_button t07_button_voltar = {0};
 
 	char txt_header[KISS_MAX_LENGTH];
 	int entrada_novo_item_width;
@@ -73,12 +70,12 @@ void tela_adicionar_no_cardapio(void) {
 	entry_novo_item.visible = 1;
 
 	/* Criando o botão do Cardápio */
-	kiss_button_new(&t08_button_confirmar, &window, "Confirmar",
+	kiss_button_new(&t07_button_confirmar, &window, "Confirmar",
 		1*window.rect.w / 2 - kiss_normal.w / 2,
 		15*window.rect.h / 20
 	);
 	/* Criando o botão dos Pedidos */
-	kiss_button_new(&t08_button_voltar, &window, "Voltar",
+	kiss_button_new(&t07_button_voltar, &window, "Voltar",
 		1*window.rect.w / 2 - kiss_normal.w / 2,
 		17*window.rect.h / 20
 	);
@@ -97,8 +94,8 @@ void tela_adicionar_no_cardapio(void) {
 
 			/* Processando eventos da janela e do botão */
 			kiss_window_event(&window, &e, &draw);
-			t08_button_confirmar_event(&t08_button_confirmar, &e, &entry_novo_item, &label_contador, &quit, &draw);
-			t08_button_voltar_event(&t08_button_voltar, &e, &quit, &draw);
+			t07_button_confirmar_event(&t07_button_confirmar, &e, &entry_novo_item, &label_contador, &quit, &draw);
+			t07_button_voltar_event(&t07_button_voltar, &e, &quit, &draw);
 			kiss_entry_event(&entry_novo_item, &e, &draw);
 		}
 
@@ -111,8 +108,8 @@ void tela_adicionar_no_cardapio(void) {
 		kiss_window_draw(&window, renderer);
 		kiss_label_draw(&label_header, renderer);
 		kiss_label_draw(&label_contador, renderer);
-		kiss_button_draw(&t08_button_confirmar, renderer);
-		kiss_button_draw(&t08_button_voltar, renderer);
+		kiss_button_draw(&t07_button_confirmar, renderer);
+		kiss_button_draw(&t07_button_voltar, renderer);
 		kiss_entry_draw(&entry_novo_item, renderer);
 
 		/* Renderizando as alterações */
@@ -127,7 +124,7 @@ void tela_adicionar_no_cardapio(void) {
 }
 
 // Função que efetiva a inserção
-void t08_button_confirmar_event(kiss_button *button, SDL_Event *e, kiss_entry *entry, kiss_label *label_contador, int *quit, int *draw) {
+void t07_button_confirmar_event(kiss_button *button, SDL_Event *e, kiss_entry *entry, kiss_label *label_contador, int *quit, int *draw) {
 	char *novo_item;
 
 	if(kiss_button_event(button, e, draw) && (strcmp(entry->text, ""))) {
@@ -145,13 +142,11 @@ void t08_button_confirmar_event(kiss_button *button, SDL_Event *e, kiss_entry *e
 
 		itens_adicionados++;
 		atualizar_label_itens_adicionados(label_contador);
-
-		mostrarCardapio(cardapio); // DEBUG
 	}
 }
 
 // Evento do botão que volta para a tela do cardápio
-void t08_button_voltar_event(kiss_button *button, SDL_Event *e, int *quit, int *draw) {
+void t07_button_voltar_event(kiss_button *button, SDL_Event *e, int *quit, int *draw) {
 	if(kiss_button_event(button, e, draw)) {
 		prox_tela = TELA_CARDAPIO;
 		*quit = 1;
