@@ -20,9 +20,10 @@ include_directories(src)
 
 # Definindo o executável e os arquivos de código fonte a compilar
 add_executable(restaurante src/main.c src/fila.c src/lista.c src/opcoes_menu.c src/utils.c
-	src/tela_cardapio.c src/tela_pedidos.c
 
-	src/tela_adicionar_no_cardapio.c src/tela_remover_do_cardapio.c src/tela_remover_dos_pedidos.c
+	src/tela_cardapio.c src/tela_ver_cardapio.c src/tela_adicionar_no_cardapio.c src/tela_remover_do_cardapio.c 
+  src/tela_pedidos.c src/tela_remover_dos_pedidos.c
+  
 	src/kiss_sdl/kiss_widgets.c src/kiss_sdl/kiss_draw.c src/kiss_sdl/kiss_general.c)
 
 # Adicionando dependência do SDL
