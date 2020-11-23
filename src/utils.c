@@ -40,7 +40,7 @@ void chamar_prox_tela() {
 			// tela_adicionar_nos_pedidos();
 			break;
 		case TELA_REMOVER_DOS_PEDIDOS:
-			// tela_remover_dos_pedidos();
+			tela_remover_dos_pedidos();
 			break;
 		case TELA_SAIR:
 			fila_esvaziar(&pedidos);

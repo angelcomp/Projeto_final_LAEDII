@@ -47,19 +47,19 @@ void tela_cardapio(void) {
 	label_titulo.textcolor.r = 255;
 
 	/* Criando o botão de Ver Cardápio */
-	kiss_button_new(&button_ver_cardapio, &window, "Ver Cardápio",
+	kiss_button_new(&button_ver_cardapio, &window, "Ver",
 		window.rect.w / 2 - kiss_normal.w / 2,
 		window.rect.h / 3
 	);
 
 	/* Criando o botão de Adicionar Itens ao Cardápio */
-	kiss_button_new(&button_add_itens, &window, "Adicionar Itens",
+	kiss_button_new(&button_add_itens, &window, "Adicionar",
 		window.rect.w / 2 - kiss_normal.w / 2,
 		window.rect.h / 2.4
 	);
 
 	/*  Criando o botão de Remover Itens do Cardápio  */
-	kiss_button_new(&button_rem_itens, &window, "Remover Pedidos",
+	kiss_button_new(&button_rem_itens, &window, "Remover",
 		window.rect.w / 2 - kiss_normal.w / 2,
 		window.rect.h / 2 
 	);
