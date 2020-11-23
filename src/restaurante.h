@@ -55,6 +55,7 @@ void lista_esvaziar(lista *q);
 void fila_criar(fila *q);
 int fila_inserir(fila *q, char *ptr_nome);
 int fila_retirar(fila *q, char receptor_nome[], int tamanho_buffer_receptor);
+int lista_retirar_fila_por_posicao(fila *q, int indice);
 int fila_estaVazia(fila q);
 void fila_mostrar(fila q);
 char * fila_inicio(fila q);

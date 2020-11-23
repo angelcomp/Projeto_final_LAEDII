@@ -43,10 +43,12 @@ void tela_principal(void) {
 	kiss_window window;
 
 	kiss_label label_titulo = {0};
+	kiss_label label_nomes_autores = {0};
 	kiss_button button_cardapio = {0};
 	kiss_button button_pedidos = {0};
 
 	char txt_titulo[KISS_MAX_LENGTH];
+	char txt_autores[KISS_MAX_LENGTH];
 	int draw, quit;
 
 	quit = 0;
@@ -70,6 +72,14 @@ void tela_principal(void) {
 		window.rect.h / 4 - (kiss_textfont.fontheight + 2 * kiss_normal.h / 2)
 	);
 	label_titulo.textcolor.r = 255;
+
+	/* Nomes autores */
+	strcpy(txt_autores, "Autores: Angelica, Marcus, Lucas Godoi, Rhian");
+	kiss_label_new(&label_nomes_autores, &window, txt_autores,
+		window.rect.w / 2 - strlen(txt_autores) * kiss_textfont.advance / 2,
+		49 * window.rect.h /50 - (kiss_textfont.fontheight + 2 * kiss_normal.h / 2)
+	);
+	label_nomes_autores.textcolor.b = 255;
 
 	/* Criando o botão do Cardápio */
 	kiss_button_new(&button_cardapio, &window, "Cardápio",
@@ -107,6 +117,7 @@ void tela_principal(void) {
 		/* Desenhando os outros componentes */
 		kiss_window_draw(&window, renderer);
 		kiss_label_draw(&label_titulo, renderer);
+		kiss_label_draw(&label_nomes_autores, renderer);
 		kiss_button_draw(&button_cardapio, renderer);
 		kiss_button_draw(&button_pedidos, renderer);
 
