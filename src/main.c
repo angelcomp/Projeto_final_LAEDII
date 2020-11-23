@@ -28,6 +28,8 @@ void chamar_prox_tela();
 int main(void) {
 	lista_criar(&cardapio);
 	fila_criar(&pedidos);
+	//fila_inserir(&pedidos, "Banana");
+	//fila_inserir(&pedidos, "Uva");
 	prox_tela = TELA_PRINCIPAL;
 
 	chamar_prox_tela();

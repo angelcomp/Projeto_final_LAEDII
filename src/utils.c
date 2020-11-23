@@ -34,10 +34,10 @@ void chamar_prox_tela() {
 			tela_remover_do_cardapio();
 			break;
 		case TELA_VER_PEDIDOS:
-			// tela_ver_pedidos();
+			tela_ver_pedidos();
 			break;
 		case TELA_ADICIONAR_NOS_PEDIDOS:
-			// tela_adicionar_nos_pedidos();
+			tela_adicionar_nos_pedidos();
 			break;
 		case TELA_REMOVER_DOS_PEDIDOS:
 			tela_remover_dos_pedidos();
