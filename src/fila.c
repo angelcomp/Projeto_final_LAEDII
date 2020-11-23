@@ -1,7 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 #include "restaurante.h"
 
 void fila_criar(fila *q) {

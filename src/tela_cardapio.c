@@ -1,8 +1,3 @@
-
-
-#include <stdio.h>
-
-#include "kiss_sdl/kiss_sdl.h"
 #include "restaurante.h"
 
 extern int prox_tela;
@@ -251,14 +246,14 @@ void button_ver_cardapio_event(kiss_button *button, SDL_Event *e, int *quit, int
 
 void button_add_itens_event(kiss_button *button, SDL_Event *e, int *quit, int *draw) {
 	if(kiss_button_event(button, e, draw)) {
-		prox_tela = TELA_CARDAPIO;
+		prox_tela = TELA_ADICIONAR_NO_CARDAPIO;
 		*quit = 1;
 	}
 }
 
 void button_rem_itens_event(kiss_button *button, SDL_Event *e, int *quit, int *draw) {
 	if(kiss_button_event(button, e, draw)) {
-		prox_tela = TELA_CARDAPIO;
+		prox_tela = TELA_REMOVER_DO_CARDAPIO;
 		*quit = 1;
 	}
 }
