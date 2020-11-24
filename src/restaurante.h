@@ -39,7 +39,7 @@ enum telas {
 
 	TELA_VER_PEDIDOS,
 	TELA_ADICIONAR_NOS_PEDIDOS,
-	TELA_REMOVER_DOS_PEDIDOS
+	TELA_SERVIR_PEDIDO
 };
 
 // Funções para a manipulação de listas
@@ -79,7 +79,7 @@ void tela_remover_do_cardapio();
 void tela_pedidos();
 void tela_ver_pedidos();
 void tela_adicionar_nos_pedidos();
-void tela_remover_dos_pedidos();
+void tela_servir_pedido();
 
 // Funções utilitárias
 char * nova_string(char texto[]);
