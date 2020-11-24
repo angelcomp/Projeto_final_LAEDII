@@ -136,11 +136,14 @@ void t06_button_confirmar_event(kiss_button *button, SDL_Event *e, kiss_combobox
 	if(kiss_button_event(button, e, draw)) {
 
 		if(indice_item_remover_pedidos >= 0) {
-			printf("Removendo item número %d\n", indice_item_remover_pedidos);
-			lista_retirar_fila_por_posicao(&pedidos, indice_item_remover_pedidos);
+			/*printf("Removendo item número %d\n", indice_item_remover_pedidos);
+
+			// TODO: Retirar essa função profana
+			// lista_retirar_fila_por_posicao(&pedidos, indice_item_remover_pedidos);
+
 			preencher_pedidos(a);
 			strcpy(cb->entry.text, "");
-			indice_item_remover_pedidos = -1;
+			indice_item_remover_pedidos = -1;*/
 		}
 	}
 }
