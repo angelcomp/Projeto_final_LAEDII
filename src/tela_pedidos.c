@@ -6,7 +6,7 @@ extern lista cardapio;
 
 void t02_button_ver_pedidos_event(kiss_button *button, SDL_Event *e, int *quit, int *draw);
 void t02_button_add_pedido_event(kiss_button *buton, SDL_Event *e, int *quit, int *draw);
-void t02_button_remover_pedido_event(kiss_button *button, SDL_Event *e, int *quit, int *draw);
+void t02_button_servir_pedido_event(kiss_button *button, SDL_Event *e, int *quit, int *draw);
 void t02_button_voltar_event(kiss_button *button, SDL_Event *e, int *quit, int *draw);
 
 void tela_pedidos(void)
@@ -19,7 +19,7 @@ void tela_pedidos(void)
 	kiss_label label_titulo = {0};
 	kiss_button t02_button_ver_pedidos = {0},
 				t02_button_add_pedido = {0},
-				t02_button_remover_pedido = {0},
+				t02_button_servir_pedido = {0},
 				t02_button_voltar = {0};
 	char txt_titulo[KISS_MAX_LENGTH];
 	int draw, quit;
@@ -57,8 +57,8 @@ void tela_pedidos(void)
 					window.rect.w / 2 - kiss_normal.w / 2,
 					window.rect.h / 2.4);
 
-	/*  Criando o botão de Remover um Pedido  */
-	kiss_button_new(&t02_button_remover_pedido, &window, "Remover",
+	/*  Criando o botão de SERVIR um Pedido  */
+	kiss_button_new(&t02_button_servir_pedido, &window, "Servir",
 					window.rect.w / 2 - kiss_normal.w / 2,
 					window.rect.h / 2);
 
@@ -86,7 +86,7 @@ void tela_pedidos(void)
 			kiss_window_event(&window, &e, &draw);
 			t02_button_ver_pedidos_event(&t02_button_ver_pedidos, &e, &quit, &draw);
 			t02_button_add_pedido_event(&t02_button_add_pedido, &e, &quit, &draw);
-			t02_button_remover_pedido_event(&t02_button_remover_pedido, &e, &quit, &draw);
+			t02_button_servir_pedido_event(&t02_button_servir_pedido, &e, &quit, &draw);
 			t02_button_voltar_event(&t02_button_voltar, &e, &quit, &draw);
 		}
 
@@ -101,7 +101,7 @@ void tela_pedidos(void)
 		kiss_label_draw(&label_titulo, renderer);
 		kiss_button_draw(&t02_button_ver_pedidos, renderer);
 		kiss_button_draw(&t02_button_add_pedido, renderer);
-		kiss_button_draw(&t02_button_remover_pedido, renderer);
+		kiss_button_draw(&t02_button_servir_pedido, renderer);
 		kiss_button_draw(&t02_button_voltar, renderer);
 
 		/* Renderizando as alterações */
@@ -128,10 +128,14 @@ void t02_button_add_pedido_event(kiss_button *button, SDL_Event *e, int *quit, i
 	}
 }
 
-void t02_button_remover_pedido_event(kiss_button *button, SDL_Event *e, int *quit, int *draw) {
+void t02_button_servir_pedido_event(kiss_button *button, SDL_Event *e, int *quit, int *draw) {
 	if(kiss_button_event(button, e, draw)) {
-		prox_tela = TELA_REMOVER_DOS_PEDIDOS;
-		*quit = 1;
+		
+		if (pedidos.inicio != NULL)
+		{
+			prox_tela = TELA_SERVIR_PEDIDO;
+			*quit = 1;
+		}
 	}
 }
 
