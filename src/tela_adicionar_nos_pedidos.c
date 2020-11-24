@@ -134,6 +134,7 @@ void t05_button_confirmar_event(kiss_button *button, SDL_Event *e, kiss_combobox
 	if(kiss_button_event(button, e, draw)) {
 		if(obter_indice_combobox(cb) >= 0) {
 			fila_inserir(&pedidos, nova_string(cb->entry.text));
+			strcpy(cb->entry.text, "");
 		}
 	}
 }
