@@ -132,7 +132,10 @@ static void t05_combobox_event(kiss_combobox *combobox, SDL_Event *e, int *draw)
 // Função que efetiva a inserção
 void t05_button_confirmar_event(kiss_button *button, SDL_Event *e, kiss_combobox *cb, kiss_array *a, int *quit, int *draw) {
 	if(kiss_button_event(button, e, draw)) {
-		fila_inserir(&pedidos, nova_string(cb->entry.text));
+		if(obter_indice_combobox(cb) >= 0) {
+			fila_inserir(&pedidos, nova_string(cb->entry.text));
+			strcpy(cb->entry.text, "");
+		}
 	}
 }
 
