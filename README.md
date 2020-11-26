@@ -7,7 +7,9 @@
 
 Este é um projeto da disciplina de Algoritmos e Estruturas de Dados em conjunto com o laboratório.
 A proposta desse trabalho era implementar os módulos aprendidos no semestre: Estruturas Dinâmicas, Interfaces Gráficas e Ponteiros.
+
 ------------ 
+
 Autores:
 - Angelica dos Santos
 - Lucas de Godoi Moraes
@@ -42,8 +44,8 @@ Organização das pastas:
 ## Dependências ##
 
 - Pacotes adicionais: sdl2-ttf, sdl2-image
-[Link da SDL2](https://www.libsdl.org)
-[Link Cmake](https://cmake.org)
+- [Link da SDL2](https://www.libsdl.org)
+- [Link Cmake](https://cmake.org)
 
 ## Compilação ##
 Se estiver em um sistema UNIX, você pode compilar e executar o projeto usando o Shell Script `quick-run.sh`
