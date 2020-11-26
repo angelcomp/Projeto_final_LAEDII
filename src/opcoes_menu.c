@@ -1,3 +1,10 @@
+/*
+
+Este arquivo é um mockup do projeto, funcionando apenas na linha de comando
+para nos orientar a começar a implementar a funcionalidade da interface gráfica.
+Ele não é chamado no código principal, mas aqui está ele.
+
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
