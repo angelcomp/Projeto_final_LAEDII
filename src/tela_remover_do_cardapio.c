@@ -137,7 +137,7 @@ void t08_button_confirmar_event(kiss_button *button, SDL_Event *e, kiss_combobox
 
 
 		if(indice_item_remover >= 0) {
-			printf("Removendo item número %d\n", indice_item_remover);
+			// printf("Removendo item número %d\n", indice_item_remover);
 			lista_retirar_por_posicao(&cardapio, indice_item_remover);
 			preencher_cardapio(a);
 			strcpy(cb->entry.text, "");
