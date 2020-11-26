@@ -1,6 +1,3 @@
-#include <stdio.h>
-
-#include "kiss_sdl/kiss_sdl.h"
 #include "restaurante.h"
 
 extern int prox_tela;

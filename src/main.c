@@ -28,8 +28,7 @@ void chamar_prox_tela();
 int main(void) {
 	lista_criar(&cardapio);
 	fila_criar(&pedidos);
-	//fila_inserir(&pedidos, "Banana");
-	//fila_inserir(&pedidos, "Uva");
+	
 	prox_tela = TELA_PRINCIPAL;
 
 	chamar_prox_tela();
@@ -58,7 +57,7 @@ void tela_principal(void) {
 
 	/* Inicializando o KISS e o vetor de objetos */
 	kiss_array_new(&objects);
-	renderer = kiss_init("Restaurate da Tia Magali", &objects, 480, 360);
+	renderer = kiss_init("Restaurante da Tia Magali", &objects, 480, 360);
 
 	if(!renderer) {
 		return;
@@ -76,7 +75,7 @@ void tela_principal(void) {
 	label_titulo.textcolor.r = 255;
 
 	/* Nomes autores */
-	strcpy(txt_autores, "Autores: Angelica, Marcus, Lucas Godoi, Rhian");
+	strcpy(txt_autores, "Autores: Angelica, Lucas Godoi, Marcus, Rhian");
 	kiss_label_new(&label_nomes_autores, &window, txt_autores,
 		window.rect.w / 2 - strlen(txt_autores) * kiss_textfont.advance / 2,
 		49 * window.rect.h /50 - (kiss_textfont.fontheight + 2 * kiss_normal.h / 2)

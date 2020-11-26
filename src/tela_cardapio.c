@@ -29,7 +29,7 @@ void tela_cardapio(void) {
 
 	/* Inicializando o KISS e o vetor de objetos */
 	kiss_array_new(&objects);
-	renderer = kiss_init("Opções do Cardápio", &objects, 480, 360);
+	renderer = kiss_init("Restaurante da Tia Magali", &objects, 480, 360);
 
 	if(!renderer) {
 		return;
