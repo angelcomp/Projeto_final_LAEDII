@@ -29,7 +29,7 @@ void tela_pedidos(void)
 
 	/* Inicializando o KISS e o vetor de objetos */
 	kiss_array_new(&objects);
-	renderer = kiss_init("Restaurate da Tia Magali", &objects, 480, 360);
+	renderer = kiss_init("Restaurante da Tia Magali", &objects, 480, 360);
 
 	if (!renderer)
 	{
