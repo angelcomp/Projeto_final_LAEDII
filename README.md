@@ -10,6 +10,18 @@ A proposta desse trabalho era implementar os módulos aprendidos no semestre: Es
 
 ------------ 
 
+## GIF - Restaurante da Tia Magali ##
+
+Desmonstração da parte do Cardápio:
+
+![alt-text](https://github.com/angelcomp/Projeto_final_LAEDII/blob/main/gif_readme/gif_restaurante%5B1%5D.gif)
+
+Desmonstração da parte dos Pedidos:
+
+![alt-text](https://github.com/angelcomp/Projeto_final_LAEDII/blob/main/gif_readme/gif_restaurante%5B2%5D.gif)
+
+------------ 
+
 Autores:
 - Angelica dos Santos
 - Lucas de Godoi Moraes
