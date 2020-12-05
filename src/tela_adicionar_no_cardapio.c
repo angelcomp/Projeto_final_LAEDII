@@ -61,7 +61,7 @@ void tela_adicionar_no_cardapio(void) {
 	label_contador.textcolor.b = 128;
 
 	/* Criando o widget de entrada */
-	entrada_novo_item_width = window.rect.w/3;
+	entrada_novo_item_width = 2*window.rect.w/5;
 	kiss_entry_new(&entry_novo_item, &window, 1, "",
 		1*window.rect.w / 2 - entrada_novo_item_width / 2,
 		1*window.rect.h / 2,
