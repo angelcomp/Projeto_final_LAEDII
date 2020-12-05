@@ -60,7 +60,7 @@ void tela_remover_do_cardapio(void) {
 	kiss_array_new(&seletor_itens);
 	kiss_array_append(&objects, ARRAY_TYPE, &seletor_itens);
 	preencher_cardapio(&seletor_itens);
-	cb_seletor_width = window.rect.w/3;
+	cb_seletor_width = 2*window.rect.w/5;
 	cb_seletor_height = window.rect.h/3;
 	kiss_combobox_new(&cb_seletor, &window, "", &seletor_itens,
 		1*window.rect.w / 2 - cb_seletor_width / 2,
