@@ -10,7 +10,7 @@ Alunos:
 	30/11 - ultimo checkpoint
 
 
-			Grande Restaurante da Tia Magali
+			Grande Restaurante da Tia Magali 
 
  
 Requistos básicos do projeto:
